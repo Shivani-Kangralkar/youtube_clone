@@ -1,5 +1,5 @@
 
-const apiKey = `AIzaSyCvwMc63qDUQ6sZBS1c5RT0YCiv-uhgslM`
+export const apiKey = `AIzaSyCvwMc63qDUQ6sZBS1c5RT0YCiv-uhgslM`
 export const url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=32&regionCode=IN&key=${apiKey}`
 
 export const GOOGLE_AC_URL = `https://clients1.google.com/complete/search`;
@@ -48,4 +48,47 @@ export const categoryList = [
       name: "Computer Science",
     }
    
+  ];
+
+
+
+  export const commentsData = [
+    {
+      name: "pratiksha bhosle",
+      text: "Just loved your video. Thank you so much Akshay saini sir.",
+      replies: [],
+    },
+    {
+      name: "kanika Kumar",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates mollitia nobis, animi natus iusto, nulla est inventore fugit totam corporis illum delectus aliquid eaque deleniti vel, similique aperiam distinctio deserunt.",
+      replies: [],
+    },
+    {
+      name: "Akshay Saini",
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates mollitia nobis, animi natus iusto, nulla est inventore fugit totam corporis illum delectus aliquid eaque deleniti vel, similique aperiam distinctio deserunt.",
+      replies: [
+        {
+          name: "Shivani Kangralkar",
+          text: "I love coding like nowadays I’m feeling like coding is flowing in my veins and literally I can do coding or learn coding a whole day without taking breaks !!! And this man keeps mi motivated every single time I watch him .",
+          replies: [
+            {
+                name: 'geeta patil',
+                text: 'Nice content',
+                replies:[
+                    {
+                        name: 'gopi kale',
+                        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates mollitia nobis, animi natus iusto, nulla est inventore fugit totam corporis illum delectus aliquid eaque deleniti vel, similique aperiam distinctio deserunt.',
+                        replies:[],
+                    },
+                    {
+                        name: 'Neha Kumari',
+                        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates mollitia nobis, animi natus iusto, nulla est inventore fugit totam corporis illum delectus aliquid eaque deleniti vel, similique aperiam distinctio deserunt.',
+                        replies:[],
+                    }
+                ],
+            }
+          ],
+        },
+      ],
+    },
   ];

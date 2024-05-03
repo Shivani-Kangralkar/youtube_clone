@@ -60,7 +60,7 @@ const SearchBar = () => {
     }
   };
 
-  console.log("suggestResult", suggestResult);
+  // console.log("suggestResult", suggestResult);
   return (
     <>
       <div className="basis-1/3">
