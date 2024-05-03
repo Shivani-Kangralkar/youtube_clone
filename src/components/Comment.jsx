@@ -12,7 +12,8 @@ const Comment = ({ data }) => {
       <Avatar name="Wim Mostmans" round={true} size={35} />
       <div className="px-3">
         <p className=" font-semibold">{name}</p>
-        <p className="w-80 break-words">{text}</p>
+        <p className="">{text}</p>
+
       </div>
 
 
