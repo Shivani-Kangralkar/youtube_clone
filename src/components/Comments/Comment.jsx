@@ -2,8 +2,8 @@ import React from "react";
 import Avatar from "react-avatar";
 
 const Comment = ({ data }) => {
-  console.log(data);
-  const { name, text, replies } = data;
+
+  const { name, text } = data;
 
 
 
@@ -13,7 +13,6 @@ const Comment = ({ data }) => {
       <div className="px-3">
         <p className=" font-semibold">{name}</p>
         <p className="">{text}</p>
-
       </div>
 
 

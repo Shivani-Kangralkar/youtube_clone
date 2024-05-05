@@ -40,5 +40,10 @@ if(searchState[searchQuery]) {
         }
       )); -->
 <!-- After making an api call if item is not present in stored cache. Dispatch the updated item into cache
-<!-- ie: ["iphone"] : res.data[1] this is all suggested 10 results --> 
+<!-- ie: ["iphone"] : res.data[1] this is all suggested 10 results 
+
+
+-->
+ <!--web socket examples : trading apps(zeroda)  -->
+ <!-- App Polling examples: email, live chat. Perticular interval is set to display live messages on screen . (example) Later after 10 messages , pops . 1 messages is deleted from top -->
 

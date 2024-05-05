@@ -10,14 +10,16 @@ import { PiShareFatLight } from "react-icons/pi";
 import { GoDownload } from "react-icons/go";
 import { BsThreeDots } from "react-icons/bs";
 import { apiKey } from "../constants/info";
-import CommentsContainer from "./CommentsContainer";
+import CommentsContainer from "./Comments/CommentsContainer";
+import LiveChatsContainer from "./LiveChats/LiveChatsContainer";
+
 
 const WatchPage = () => {
   const dispatch = useDispatch();
 
   const [searchParam] = useSearchParams();
   const [video, setVideo] = useState(null);
-  const [input, setInput] = useState("");
+
   const id = searchParam.get("v");
 
   const getVideo = async () => {
@@ -39,67 +41,72 @@ const WatchPage = () => {
     dispatch(close());
   }, []);
 
-  console.log("sssssss", input);
-
   return (
     <>
-      <div className="ml-36 w-1/2">
-        <div className="mt-5 shadow-lg rounded-xl overflow-hidden">
-          <ReactPlayer
-            width={850}
-            height={450}
-            url={`https://www.youtube.com/embed/${id}`}
-            controls
-          />
-        </div>
+      <div className="ml-36 ">
+        <div className="flex flex-row mt-5">
+          <div className="w-[53rem]">
+            <div className=" rounded-xl overflow-hidden">
+              <ReactPlayer
+                width={850}
+                height={450}
+                url={`http://www.youtube.com/embed/${id}`}
+                controls
+              />
+            </div>
 
-        {/* comments */}
+            <div>
+              <div>
+                <h1 className="font-bold my-2 text-lg">
+                  {video?.snippet.title}
+                </h1>
 
-        <div>
-          <div>
-            <h1 className="font-bold my-2 text-lg">{video?.snippet.title}</h1>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between w-[40%]">
+                    <div className="flex">
+                      <Avatar
+                        src="https://play-lh.googleusercontent.com/C9CAt9tZr8SSi4zKCxhQc9v4I6AOTqRmnLchsu1wVDQL0gsQ3fmbCVgQmOVM1zPru8UH=w240-h480-rw"
+                        size={40}
+                        round={true}
+                      />
+                      <h1 className="font-bold ml-2">
+                        {video?.snippet?.channelTitle}
+                      </h1>
+                    </div>
+                    <div className="flex items-center mr-1 font-semibold cursor-pointer bg-gray-200 px-4 py-2 rounded-full">
+                      <span>Join</span>
+                    </div>
+                    <button className="px-4 py-1 font-medium bg-black text-white rounded-full">
+                      Subscribe
+                    </button>
+                  </div>
+                  <div className="flex items-center w-[50%] justify-between mt-2">
+                    <div className="flex items-center cursor-pointer bg-gray-200 px-4 py-2 rounded-full">
+                      <AiOutlineLike size="20px" className="mr-5" />
+                      <AiOutlineDislike size="20px" />
+                    </div>
+                    <div className="flex items-center cursor-pointer bg-gray-200 px-4 py-2 rounded-full">
+                      <PiShareFatLight size="20px" className="mr-2" />
+                      <span>Share</span>
+                    </div>
+                    <div className="flex items-center cursor-pointer bg-gray-200 px-4 py-2 rounded-full">
+                      <GoDownload />
+                      <span>Download</span>
+                    </div>
 
-            <div className="flex items-center justify-between">
-              <div className="flex items-center justify-between w-[40%]">
-                <div className="flex">
-                  <Avatar
-                    src="https://play-lh.googleusercontent.com/C9CAt9tZr8SSi4zKCxhQc9v4I6AOTqRmnLchsu1wVDQL0gsQ3fmbCVgQmOVM1zPru8UH=w240-h480-rw"
-                    size={40}
-                    round={true}
-                  />
-                  <h1 className="font-bold ml-2">
-                    {video?.snippet?.channelTitle}
-                  </h1>
+                    <div className="flex items-center cursor-pointer bg-gray-200 px-4 py-2 rounded-full">
+                      <BsThreeDots />
+                    </div>
+                  </div>
                 </div>
-                <div className="flex items-center mr-1 font-semibold cursor-pointer bg-gray-200 px-4 py-2 rounded-full">
-                  <span>Join</span>
-                </div>
-                <button className="px-4 py-1 font-medium bg-black text-white rounded-full">
-                  Subscribe
-                </button>
               </div>
-              <div className="flex items-center w-[50%] justify-between mt-2">
-                <div className="flex items-center cursor-pointer bg-gray-200 px-4 py-2 rounded-full">
-                  <AiOutlineLike size="20px" className="mr-5" />
-                  <AiOutlineDislike size="20px" />
-                </div>
-                <div className="flex items-center cursor-pointer bg-gray-200 px-4 py-2 rounded-full">
-                  <PiShareFatLight size="20px" className="mr-2" />
-                  <span>Share</span>
-                </div>
-                <div className="flex items-center cursor-pointer bg-gray-200 px-4 py-2 rounded-full">
-                  <GoDownload />
-                  <span>Download</span>
-                </div>
 
-                <div className="flex items-center cursor-pointer bg-gray-200 px-4 py-2 rounded-full">
-                  <BsThreeDots />
-                </div>
-              </div>
+              <CommentsContainer />
             </div>
           </div>
 
-          <CommentsContainer />
+          <LiveChatsContainer />
+
         </div>
       </div>
     </>
