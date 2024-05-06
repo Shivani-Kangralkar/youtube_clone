@@ -1,8 +1,13 @@
 import React from "react";
+import useFilterSearch from "../../hooks/useFilterSearch";
+import {CATEGORY_SEARCH_URL} from '../../constants/info'
 
 const CategoryCard = ({ name }) => {
+  
+  const { getSearchByKeyword } = useFilterSearch(`${CATEGORY_SEARCH_URL}&q=${name}`)
+  
   const handleButtonClick = () => {
-    // console.log("handleButtonClick");
+    getSearchByKeyword();
   };
 
 

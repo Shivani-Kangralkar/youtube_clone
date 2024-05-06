@@ -7,18 +7,18 @@ const Sidebar = () => {
   const isMenuOpen = useSelector((state) => state.toggle.isMenuOpen);
   const [isHomeBold, setIsHomeBold] = useState(false);
   const location =  useLocation()
-  // console.log('location', location.pathname);
+
 
   if (!isMenuOpen) return null;
 
   const handleClick = () => {
-    // console.log("click me ");
+
     if (location.pathname !== "/") {
       setIsHomeBold(!isHomeBold);
     }
   };
 
-  // console.log("isHomeBold", isHomeBold);
+
   return (
     <div className="p-5 w-48">
       <ul>

@@ -1,5 +1,5 @@
 import React from "react";
-import { categoryList } from "../constants/info";
+import { categoryList } from "../../constants/info";
 import CategoryCard from "./CategoryCard";
 
 const CategoryList = () => {

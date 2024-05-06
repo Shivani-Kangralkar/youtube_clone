@@ -12,7 +12,6 @@ const Header = () => {
   const dispatch = useDispatch()
 
   const toggleMenuHander = () => {
-    // console.log("inside ");
     dispatch(toggleMenu())
   }
   return (

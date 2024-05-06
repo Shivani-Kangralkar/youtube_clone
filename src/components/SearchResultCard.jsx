@@ -1,7 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-const VideoCard = ({ imgUrl, title, viewCount, channelTitle, id }) => {
+const SearchResultCard = ({title,imgUrl,channelTitle,id,description}) => {
   return (
     <Link to={`/watch?v=${id}`}>
       <div className="p-2 m-2 w-80 shadow-lg rounded-b-md ">
@@ -10,14 +10,10 @@ const VideoCard = ({ imgUrl, title, viewCount, channelTitle, id }) => {
           {title}
         </p>
         <p className="px-2 text-sm mt-1 ">{channelTitle}</p>
-        <p className="px-2 text-xs truncate">
-          {viewCount ? `${viewCount} views` : ""}
-        </p>
+        <p className="px-2 text-xs truncate"> {description}</p>
       </div>
     </Link>
+  )
+}
 
-
-  );
-};
-
-export default VideoCard;
+export default SearchResultCard

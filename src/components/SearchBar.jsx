@@ -5,6 +5,7 @@ import axios from "axios";
 import jsonpAdapter from "axios-jsonp";
 import { cacheResults } from "../redux-store/SearchSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -12,6 +13,7 @@ const SearchBar = () => {
   const [showSuggestion, setShowSuggestion] = useState(false);
   const searchCache = useSelector((state)=> state.search)
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
 
 
@@ -60,11 +62,18 @@ const SearchBar = () => {
     }
   };
 
-  // console.log("suggestResult", suggestResult);
+const submitHandler = (e) => {
+
+  e.preventDefault();
+  if(!searchQuery) return ;
+  setShowSuggestion(false)
+  navigate(`/results?search_query=${searchQuery}`);
+}
+
   return (
     <>
       <div className="basis-1/3">
-        <form>
+        <form onSubmit={submitHandler}>
           <div className="flex">
             <input
               type="text"
@@ -79,7 +88,7 @@ const SearchBar = () => {
               }}
               className="w-full py-2 px-4 border border-gray-400 rounded-l-full outline-none"
             />
-            <button className="py-2 border border-gray-400 rounded-r-full px-4">
+            <button type="submit" onClick={submitHandler} className="py-2 border border-gray-400 rounded-r-full px-4">
               <BsSearch />
             </button>
           </div>

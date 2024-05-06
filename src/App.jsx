@@ -3,6 +3,8 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import MainBody from './components/MainBody'
 import VideoContainer from './components/VideoContainer'
 import WatchPage from './components/WatchPage'
+import Error from './components/Error'
+import SearchResultQuery from './components/SearchResultQuery'
 
 const App = () => {
   const routes = createBrowserRouter([
@@ -15,10 +17,15 @@ const App = () => {
           element: <VideoContainer />
         },
         {
+          path: '/results',
+          element: <SearchResultQuery />
+        },
+        {
           path: '/watch',
           element: <WatchPage />
         }
-      ]
+      ],
+      errorElement: <Error/>
     }
   ])
   return (

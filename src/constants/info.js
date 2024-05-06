@@ -1,9 +1,23 @@
-export const apiKey = `AIzaSyCvwMc63qDUQ6sZBS1c5RT0YCiv-uhgslM`;
+export const apiKey = `AIzaSyBucLc1i5vbVrFJBPlmYI4IIZBUanDb3rc`;
 export const url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=32&regionCode=IN&key=${apiKey}`;
 
 export const GOOGLE_AC_URL = `https://clients1.google.com/complete/search`;
-export const YOUTUBE_SEARCH_APIKEY =
-  "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+
+
+export const SEARCH_URL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=28&key=${apiKey}`
+export const CATEGORY_SEARCH_URL = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=28&key=${apiKey}`
+
+
+
+
+
+
+
+
+
+
+
+
 
 export const categoryList = [
   {
