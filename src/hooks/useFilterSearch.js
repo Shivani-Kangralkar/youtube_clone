@@ -9,18 +9,13 @@ const useFilterSearch = (url) => {
 
   const getSearchByKeyword = async () => {
     try {
-      dispatch(loadingMethod(false))
-
+      dispatch(loadingMethod())
       const res = await fetch(url);
-
       if (!res.ok) {
         throw new Error("Something went wrong");
       }
       const result = await res.json();
-
       const { items } = result
-
-      // console.log('items',items);
 
 // NOTE: Elements are filtered based upon cateorgy (which had id.kind.video). 
 // Only filter those items of id.kind which has video in it.
@@ -30,9 +25,6 @@ const useFilterSearch = (url) => {
           (elem) => elem.id.kind.includes('video')
 
         );
-
-        // console.log('filteredItem',filteredItem);
-
         dispatch(searchByKeyword(filteredItem));
       } else {
         dispatch(errorMethod("Some thing went wrong"));
@@ -41,8 +33,6 @@ const useFilterSearch = (url) => {
       dispatch(errorMethod(err.message))
     }
   };
-
-  // console.log('videoLists', videoLists);
 
   return { getSearchByKeyword, videoLists };
 };

@@ -16,7 +16,7 @@ const videoListSlice = createSlice({
             state.videoLists = action.payload,
             state.error = null
         },
-        loadingMethod:(state,action) => {
+        loadingMethod:(state) => {
             state.isPending = true,
             state.videoLists = null,
             state.error = null

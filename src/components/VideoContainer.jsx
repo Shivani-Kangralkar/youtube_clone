@@ -9,7 +9,7 @@ const VideoContainer = () => {
   const { videoLists } = useFetchApi(url);
 
 
-  // NOTE: After selecting category ('sports','movies'), It shows output on videoConatiner component.
+  // NOTE: After selecting category ('sports','movies'), It shows output on videoContainer component.
   // Also when api is called for very first time , It shows output over here.
   // console.log("inside useFetchApi", videoLists);
 
